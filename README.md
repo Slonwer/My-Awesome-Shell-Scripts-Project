@@ -1,8 +1,6 @@
 # Shell_Bash
 
 
-Project Name
-Brief description of the project in one or two sentences.
 
 Description
 A more detailed description of the project, explaining its purpose, features, and any additional relevant information.
