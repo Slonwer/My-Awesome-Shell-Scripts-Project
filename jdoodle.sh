@@ -6,6 +6,8 @@
 SEP=":"
 TEMP="temp.$$"
 MASCARA='$'
+DATA='#'
+#----------Entrada do texte do Banco----------#
 
 [ "$BANCO" ] || {
     echo "Base de dados não informada. Use a variável BANCO"
@@ -45,9 +47,20 @@ insere_registro() {
         echo "$*" >> "$BANCO"
         echo "Registro inserido com sucesso"
     fi
+    
+    else 
+    echo "Registro nao feito"
+    
     return 0
-}
-echo "Fim banco"
+{
+registro_registro()
+
+nao_chave "$0" "$SEP" | if [! $0 -x echo 'chave nao registrada.txt']
+
+{
+
+echo "Fim banco text"
 {
     return 0
 }
+
