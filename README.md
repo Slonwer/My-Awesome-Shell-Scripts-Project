@@ -1,4 +1,4 @@
-🦏# Shell_Bash
+# Shell_Bash
 
 Sure! Here's an example of a README file for a shell script project written in English:
 
