@@ -1,6 +1,5 @@
 # Shell_Bash
 
-Sure! Here's an example of a README file for a shell script project written in English:
 
 Project Name
 Brief description of the project in one or two sentences.
