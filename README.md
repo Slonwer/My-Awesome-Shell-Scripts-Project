@@ -28,4 +28,6 @@ List of authors or contributors involved in the project.
 
 Please note that this is just a general structure, and you can customize it according to your specific project requirements.
 
-https://hackaday.com/wp-content/uploads/2017/03/tux-on-htop-featured.jpg?w=800
+![Image Description](https://hackaday.com/wp-content/uploads/2017/03/tux-on-htop-featured.jpg?w=800)
+
+
