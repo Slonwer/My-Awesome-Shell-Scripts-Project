@@ -7,6 +7,11 @@ USUARIOS=$(who | awk '{print $1}')
 TESTE01=$(test A == B ; echo $?)
 TESTE02=$(test -f /etc/passwd ; echo $?)
 DATE=$(date +"%d/%m/%Y - %H:%M:%S")
+TESTE01=$(test A == B ; echo $?)
+TESTE02=$(test -f /etc/passwd ; echo $?)
+MENU_EXIBICAO="Menu de exibição"
+MENU_DIA_HORA="Menu de dia e hora"
+SAIR="Sair"
 
 Utilizando o comando echo para imprimir na tela os valores das variáveis locais
 e variáveis especiais do Shell
@@ -18,13 +23,19 @@ echo "Todos os parâmetros...........: $*"
 echo "Parâmetro 01..................: $1"
 echo "Parâmetro 02..................: $2"
 echo "Status do comando anterior....: $?"
-echo "PID do processo...............: $$"
+echo "PID do processo...............: "
 echo "Usuário logado................: $USUARIOS"
 echo "Comando: test A == B..........: $TESTE01"
 echo "Comando: test -f /etc/passwd..: $TESTE02"
 echo "Menu de exibição"
 echo "Menu de dia e hora"
 echo "Sair"
+#---------File---------#
+echo "Home file: $0"
+echo "Primeiro parâmetro: $1"
+echo "Todos os Parâmetros: $*"
+echo "Número de parâmetros: $#"
+echo "Números deste processo: "
 
 Utilizando o comando if para fazer os testes lógicos
 if [ "$USUARIO" == "root" ]; then
@@ -47,16 +58,16 @@ fi
 Utilizando o comando case para fazer os testes lógicos
 case "$TESTE01" in
 0) echo "Resultado do comando case é...: 0 - VERDADEIRO";;
-1) echo "Resultado do comando case é...: 1 - FALSO";;
+
+echo "Resultado do comando case é...: 1 - FALSO";;
 *) echo "Resultado do comando case é...: NÃO IDENTIFICADO";;
 esac
-
 Utilizando o comando read para receber os valores e fazer o teste lógico com case
 read -p "Digite as letras: A, B ou C...: " LETRAS
 case "$LETRAS" in
-A|a) echo "A letra digitada foi..........: $LETRAS";;
-B|b) echo "A letra digitada foi..........: $LETRAS";;
-C|c) echo "A letra digitada foi..........: $LETRAS";;
+[Aa]) echo "A letra digitada foi..........: $LETRAS";;
+[Bb]) echo "A letra digitada foi..........: $LETRAS";;
+[Cc]) echo "A letra digitada foi..........: $LETRAS";;
 *) echo "Letra digitada incorretamente.: $LETRAS";;
 esac
 
@@ -80,7 +91,7 @@ echo "Valor de sequência numérica...: $INICIO"
 let "INICIO=INICIO+1"
 done
 
-----------Data e hora------------
+#----------Data e hora------------#
 while true; do
 read -p "Qual a opção que você deseja? " entrada
 if [ "$entrada" -eq 1 ]; then
@@ -91,3 +102,79 @@ date
 break
 fi
 done
+
+#-------------Home--file---------------#
+
+if cmp "$file1" "$file2" > /dev/null; then
+echo ""
+else
+echo ""
+fi
+
+if [ "$n1" -lt "$n2" ]; then
+echo "$n1 é menor que $n2"
+fi
+echo "$n1 -lt"
+
+Operador if-the
+if comando; then
+...
+fi
+
+if cmp file1 file2 >/dev/null; then
+echo ""
+fi
+
+Operador if-the-else
+if comando; then
+...
+else
+...
+fi
+
+if [ -e "$file1" ]; then
+echo "$file1 existe"
+else
+echo "$file1 não existe"
+fi
+
+Operador if-then-elif-else
+if comando1; then
+...
+elif comando2; then
+...
+else
+...
+fi
+
+Compara as variáveis $n1 e $n2
+if [ "$n1" -lt "$n2" ]; then
+echo "$n1 < $n2"
+elif [ "$n1" -gt "$n2" ]; then
+echo "$n1 > $n2"
+else
+echo "$n1 = $n2"
+fi
+
+Operador case
+case variável in
+"string1")
+...
+break;;
+"string2")
+...
+break;;
+*)
+...
+break;;
+esac
+
+case $opt in
+"-c") complete=1 ;;
+"-s")
+short=1 ;
+name="" ;;
+*)
+echo "opção $opt desconhecida" ;
+exit 1 ;;
+esac
