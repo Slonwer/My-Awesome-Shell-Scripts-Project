@@ -25,13 +25,20 @@ echo "Usuário logado................: $USUARIOS"
 echo "Comando: test A == B..........: $TESTE01"
 echo "Comando: test -f /etc/passwd..: $TESTE02"
 
+
 #Utilizando o comando if para fazer os testes lógicos
 if [ $USUARIO == root ];
+
+else
+
+if [$ADMIN == admin];
+
 then
 	echo "Teste de usuário..............: Usuário é root."
 else
 	echo "Teste de usuário..............: Usuário não é root"
 fi
+        echo "Teste de root   ..............:  Usuário é Admin"
 
 #Utilizando o comando if encadeado para aumentar os testes lógicos
 if [ $TESTE01 -eq 0 ];
