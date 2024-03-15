@@ -1,0 +1,19 @@
+{
+    "description": "TCC-Life",
+    "authors": [
+        {
+            "name": "Blareovski1",
+            "email": "gabriel.nascimento287@etec.sp.gov.br"
+            
+        }
+        
+    ],
+    "autoload": {
+        "psr-4": {
+            "Sts\\": "app/sts",
+            "Core\\": "core"
+        }
+    }
+    
+    
+}
